@@ -44,3 +44,4 @@ Thumbs.db
 
 # Environments
 # src/environments/environment.prod.ts
+functions/firebase-debug.log
