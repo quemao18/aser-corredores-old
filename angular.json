@@ -22,14 +22,49 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/animate.css/animate.min.css",
               "src/assets/sass/paper-kit.scss",
               "src/assets/css/demo.css",
-              "src/assets/css/nucleo-icons.css"
+              "src/assets/css/nucleo-icons.css",
+              "node_modules/font-awesome/css/font-awesome.css",
+              "src/animate.scss",
+              "src/styles.scss",
+              "node_modules/perfect-scrollbar/css/perfect-scrollbar.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/popper.js/dist/umd/popper.js",
+              "node_modules/bootstrap-notify/bootstrap-notify.js",
+              "node_modules/bootstrap-material-design/dist/js/bootstrap-material-design.min.js",
+              "node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"
+            ],
             "allowedCommonJsDependencies": [
+              "rxjs",
+              "rxjs-compat",
+              "@firebase",
+              "@firebase/app",
+              "@firebase/firestore",
+              "@firebase/component",
+              "@firebase/util",
+              "chartist",
+              "hammerjs",
+              "jquery",
+              "firebase/app",
+              "@firebase/auth",
+              "ngx-lightbox",
+              "qrcode",
+              "@zxing/library",
+              "jspdf",
+              "raf",
+              "@babel/runtime/helpers/slicedToArray",
+              "@babel/runtime/helpers/possibleConstructorReturn",
+              "@babel/runtime/helpers/inherits",
+              "@babel/runtime/helpers/toConsumableArray",
+              "@babel/runtime/helpers/get",
+              "core-js",
               "rxjs/add/operator/filter",
-              "nouislider"
+              "nouislider",
+              "@angular/fire/firestore"
             ]
           },
           "configurations": {

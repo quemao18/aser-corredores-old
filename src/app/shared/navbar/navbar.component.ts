@@ -1,5 +1,8 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, Input } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AuthService } from 'app/services/auth/auth.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-navbar',
@@ -10,7 +13,7 @@ export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
 
-    constructor(public location: Location, private element : ElementRef) {
+    constructor(public location: Location, private element : ElementRef, private modalService: NgbModal) {
         this.sidebarVisible = false;
     }
 
@@ -71,4 +74,46 @@ export class NavbarComponent implements OnInit {
             return false;
         }
     }
+
+    open() {
+        const modalRef = this.modalService.open(NgbdModalContent);
+        // modalRef.componentInstance.name = 'World';
+    }
+
+    close() {
+        const modalRef = this.modalService.dismissAll();
+    }
+
 }
+
+
+
+@Component({
+    selector: 'app-modal-content',
+    templateUrl: './login-modal.component.html',
+    styleUrls: ['./navbar.component.scss']
+  })
+  export class NgbdModalContent {
+  
+    form: FormGroup;
+
+    constructor(public activeModal: NgbActiveModal, public authService: AuthService) {}
+
+    ngOnInit(): void {
+        this.form = new FormGroup({
+          email: new FormControl('', [
+            Validators.required,
+            Validators.email
+          ]),
+            password: new FormControl('', [
+            Validators.required,
+            Validators.min(4)
+          ]),
+          
+        });
+      
+      }
+
+    get email() { return this.form.get('email'); }
+
+  }

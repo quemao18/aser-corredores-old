@@ -1,1 +1,234 @@
 /* You can add global styles to this file, and also import other style files */
+@import "src/assets/sass/paper-kit/variables";
+@import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
+// @import "~animate.css/animate.min.css";
+
+// colores aser #5A9869.  #2A7E35. #91BD8F
+.angular-logo{
+    max-width: 170px;
+    margin: -50px auto 45px;
+    color: white;
+    img{
+        width: 100%;
+    }
+}
+.page-header{
+    background-color: #B2AFAB;
+    background-position: center center;
+    background-size: cover;
+    min-height: 100vh;
+    max-height: 999px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    /* Center vertically */
+    align-items: center;
+    /*Center horizontaly */
+    justify-content: center;
+
+    /*Center horizontaly ie */
+    -ms-flex-pack: center;
+    color: rgb(74, 74, 74);;
+
+
+    .filter::after{
+        background-color: rgba(0, 0, 0, 0.5);
+        
+        content: "";
+        display: block;
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+    }
+
+    &.page-header-small{
+        min-height: 65vh !important;
+        max-height: 700px;
+    }
+    &.page-header-xs{
+        min-height: 40vh !important;
+    }
+
+    &.section-dark{
+        .content-center,
+        .category-absolute{
+            z-index: 1;
+        }
+    }
+}
+.page-header .motto{
+    text-align: left;
+    z-index: 3;
+    color: rgb(74, 74, 74);;
+    position: relative;
+}
+.navbar-brand, .nav-link{
+    color: rgb(74, 74, 74) !important;
+}
+
+.filter::after{
+    background-color: rgba(0, 0, 0, 0.5);
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+// .moving-car{
+//     top: 86%;
+//     left: 100%;
+//     animation: cloudLoop 20s linear infinite;
+// }
+
+// .moving-person3{
+//     // top: 72%;
+//     position:fixed;
+//     bottom:0px;
+//     top: 82%;
+//     left: 81%;
+//     animation: none !important
+// }
+
+// .moving-person2{
+//     top: 72.5%;
+//     left: 86%;
+//     animation: none !important;
+// }
+
+// .moving-person{
+//     top: 72%;
+//     left: 23%;
+//     animation: none !important;
+// }
+
+.navbar[class*=bg-] .navbar-toggler .navbar-toggler-bar, .navbar.navbar-transparent .navbar-toggler .navbar-toggler-bar {
+    background: rgb(74, 74, 74) !important;
+}
+
+.modal-register{
+    width: auto;
+    margin: 0px 0px;
+    /* min-height: 400px; */
+    padding: 30px;
+    z-index: 1;
+}
+
+.input-group.form-group-no-border .input-group-prepend .input-group-text{
+    margin-right: 0;
+    // background: transparent;
+    border: 1px solid #ced4da !important;
+    // @include transition(300ms, linear);
+  }
+
+  .input-group-focus {
+    
+      border: 1px solid #ced4da !important;
+    
+   
+  }
+
+ .social {
+    float: none;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.social .circle{
+    background-color: #EEEEEE;
+    color: #FFFFFF;
+    border-radius: 100px;
+    display: inline-block;
+    margin: 0 17px;
+    padding: 15px;
+}
+.social .circle .fa{
+    font-size: 16px;
+}
+.social .facebook{
+    background-color: #455CA8;
+    color: #FFFFFF;
+}
+.social .google{
+    background-color: #F74933;
+}
+.facebook:hover{
+    background-color: #6E83CD;
+}
+.google:hover{
+    background-color: #FF7566;
+}
+
+.division {
+    float: none;
+    margin: 0 auto 18px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.division .line {
+    border-top: 1px solid #DFDFDF;
+    position: absolute;
+    top: 10px;
+    width: 34%;
+}
+.division .line.l {
+    left: 0;
+}
+.division .line.r {
+    right: 0;
+}
+.division span {
+    color: #424242;
+    font-size: 17px;
+}
+
+// @keyframes cloudLoop{   100%{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+//                         0%{-webkit-transform:translate3d(-50%,0,0);
+//                         transform:translate3d(-50%,0,0)}
+// }
+
+.div-wrapper {
+    position: relative;
+    width: 0px;
+    height: 300px;
+}
+
+.div-wrapper .moving-person {
+    position: absolute;
+    left: -1050px;
+    top: 380px;
+    animation: none !important
+}
+
+.div-wrapper .moving-person2 {
+    position: absolute;
+    left: -170px;
+    top: 384px;
+    animation: none !important
+}
+
+.div-wrapper .moving-person3 {
+    position: absolute;
+    left: -300px;
+    top: 380px;
+    animation: none !important
+}
+
+.div-wrapper .moving-car {
+    position: absolute;
+    top: 510px;
+    animation: cloudLoop 20s linear infinite;
+}
