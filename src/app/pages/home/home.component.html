@@ -12,12 +12,12 @@
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn btn-round btn btn-outline-default btn-lg btn-primary"><i class="fa fa-play"></i>Mira como</a>
         </div>
     </div>
-    <div class="div-wrapper">
-    <div class="moving-clouds moving-person" style="background-image: url('assets/img/personmano.svg'); background-repeat: no-repeat; background-size: auto 155px; "></div>
-    <div class="moving-clouds moving-person2" style="background-image: url('assets/img/personyellow.svg'); background-repeat: no-repeat; background-size: auto 155px; "></div>
-    <div class="moving-clouds moving-person3" style="background-image: url('assets/img/persontablet.svg'); background-repeat: no-repeat; background-size: auto 155px; "></div>
-    <div class="moving-clouds moving-car" style="background-image: url('assets/img/car.png'); background-repeat: no-repeat; background-size: 90px 50px; "></div>
-    <!-- <div class="moving-clouds moving-person2" style="background-image: url('assets/img/person2.svg'); background-repeat: no-repeat; background-size: 150px 100px; "></div> -->
+    <div class="div-wrapper" *ngIf="!isMobileMenu()">
+        <div class="moving-clouds moving-person" style="background-image: url('assets/img/personmano.svg'); background-repeat: no-repeat; background-size: auto 155px; "></div>
+        <div class="moving-clouds moving-person2" style="background-image: url('assets/img/personyellow.svg'); background-repeat: no-repeat; background-size: auto 155px; "></div>
+        <div class="moving-clouds moving-person3" style="background-image: url('assets/img/persontablet.svg'); background-repeat: no-repeat; background-size: auto 155px; "></div>
+        <div class="moving-clouds moving-car" style="background-image: url('assets/img/car.png'); background-repeat: no-repeat; background-size: 90px 50px; "></div>
+        <!-- <div class="moving-clouds moving-person2" style="background-image: url('assets/img/person2.svg'); background-repeat: no-repeat; background-size: 150px 100px; "></div> -->
     </div>
 
 </div>
@@ -37,7 +37,7 @@
             <div class="col-md-4">
                 <div class="info">
                     <div class="icon icon-primary">
-                        <i class="fa fa-pencil"></i>
+                        <i class="fa fa-pencil-alt"></i>
                     </div>
                     <div class="description">
                         <h4 class="info-title">Misión</h4>

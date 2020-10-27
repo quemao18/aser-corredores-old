@@ -1,4 +1,4 @@
-<nav id="sidebar" class="sidebar" [ngClass]="{'sidebar-bg' : hasBackgroundImage()}">
+<nav [style.display] ="getSideBarState()? 'none': 'block'"  id="sidebar" class="sidebar" [ngClass]="{'sidebar-bg' : hasBackgroundImage()}">
     <div class="sidebar-content">
       <!-- <perfect-scrollbar> -->
         <div class="sidebar-header">
@@ -44,7 +44,7 @@
               <div *ngIf="menu.type === 'dropdown'" class="sidebar-submenu" [@slide]="getState(menu)">
                 <ul>
                   <li *ngFor="let submenu of menu.submenus">
-                    <a routerLink="submenu.link"> {{submenu.title}}
+                    <a [routerLink]="[submenu.path]"> {{submenu.title}}
                       <span *ngIf="submenu.badge" class="badge badge-pill" [ngClass]="submenu.badge.class">{{submenu.badge.text}}</span>
                     </a>
                   </li>

@@ -9,7 +9,8 @@ export class SidebarService {
   menus = [
     {
       title: 'general',
-      type: 'header'
+      type: 'header',
+      submenus: []
     },
     {
       title: 'Dashboard',
@@ -26,13 +27,16 @@ export class SidebarService {
           badge: {
             text: 'Pro ',
             class: 'badge-success'
-          }
+          },
+          path: '/dashboard'
         },
         {
-          title: 'Dashboard 2'
+          title: 'Dashboard 2',
+          path: '/dashboard2'
         },
         {
-          title: 'Dashboard 3'
+          title: 'Dashboard 3',
+          path: '/dashboard-3'
         }
       ]
     },
@@ -48,16 +52,19 @@ export class SidebarService {
       submenus: [
         {
           title: 'Products',
+          path: '/prodcuts'
         },
         {
-          title: 'Orders'
+          title: 'Orders',
+          path: '/orders'
         },
         {
-          title: 'Credit cart'
+          title: 'Credit cart',
+          path: '/credit-cart'
         }
       ]
     },
-    {
+    /*{
       title: 'Components',
       icon: 'far fa-gem',
       active: false,
@@ -139,7 +146,7 @@ export class SidebarService {
       icon: 'fa fa-folder',
       active: false,
       type: 'simple'
-    }
+    }*/
   ];
   constructor() { }
 

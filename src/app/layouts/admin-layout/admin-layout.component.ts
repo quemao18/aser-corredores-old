@@ -4,8 +4,11 @@ import 'rxjs/add/operator/filter';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import PerfectScrollbar from 'perfect-scrollbar';
+import { SidebarService } from 'app/shared/sidebar/sidebar.service';
 // import * as $ from "jquery";
 declare var $: any;
+
+
 
 @Component({
   selector: 'app-admin-layout',
@@ -15,14 +18,17 @@ declare var $: any;
 export class AdminLayoutComponent implements OnInit {
   private _router: Subscription;
   private lastPoppedUrl: string;
-  private yScrollStack: number[] = [];
+  private yScrollStack: number[] = []; 
+  private listTitles: any[];
 
-  constructor( public location: Location, private router: Router) {}
+  menuItems: any[];
+
+  constructor(public sidebarservice: SidebarService, public location: Location, private router: Router, private sidebarService: SidebarService) {}
 
   ngOnInit() {
+      this.listTitles = this.sidebarService.menus.filter(listTitle => listTitle);
+
       const isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
-      
-      $('.fixed-plugin').hide(); //ocultando el config a la derecha
       
       if (isWindows && !document.getElementsByTagName('body')[0].classList.contains('sidebar-mini')) {
           // if we are on windows OS we activate the perfectScrollbar function
@@ -156,7 +162,47 @@ export class AdminLayoutComponent implements OnInit {
       if (navigator.platform.toUpperCase().indexOf('MAC') >= 0 || navigator.platform.toUpperCase().indexOf('IPAD') >= 0) {
           bool = true;
       }
-      return bool;
+      return 
+      bool;
+  }
+
+  isMobileMenu() {
+    if ($(window).width() > 991) {
+        return false;
+    }
+    return true;
+  }
+
+  getTitle(){
+    var titlee = this.location.prepareExternalUrl(this.location.path()) || 'Dashboard';
+    if(titlee.charAt(0) === '#'){
+        titlee = titlee.slice( 1 );
+    }
+        for(var item = 0; item < this.listTitles.length; item++){ 
+            // console.log(this.listTitles[item])
+            let sm = this.listTitles[item].submenus.filter(obj => titlee==(obj.path));
+            sm.forEach(element => {
+                titlee = ( element.title );
+            });
+        }
+
+    // });
+
+    return titlee;
+  }
+
+  toggleSidebar() {
+    this.sidebarservice.setSidebarState(!this.sidebarservice.getSidebarState());
+  }
+  toggleBackgroundImage() {
+    this.sidebarservice.hasBackgroundImage = !this.sidebarservice.hasBackgroundImage;
+  }
+  getSideBarState() {
+    return this.sidebarservice.getSidebarState();
+  }
+
+  hideSidebar() {
+    this.sidebarservice.setSidebarState(true);
   }
 
 }

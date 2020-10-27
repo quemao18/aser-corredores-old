@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var $: any;
 
 @Component({
   selector: 'app-home',
@@ -10,6 +11,13 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  isMobileMenu() {
+    if ($(window).width() > 991) {
+        return false;
+    }
+    return true;
   }
 
 }

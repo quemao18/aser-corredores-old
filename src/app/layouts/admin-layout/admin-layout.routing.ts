@@ -4,5 +4,8 @@ import { DashboardComponent } from 'app/pages/admin/dashboard/dashboard.componen
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent, },
+    { path: 'dashboard2',      component: DashboardComponent, },
+
 
 ];
+

@@ -7,12 +7,14 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbdModalContent } from 'app/shared/navbar/navbar.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { HomeComponent } from 'app/pages/home/home.component';
 
 
 
 @NgModule({
   declarations: [
-    NgbdModalContent
+    NgbdModalContent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
