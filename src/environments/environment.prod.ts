@@ -4,7 +4,7 @@ const web = 'http://localhost:4200';
 export const environment = {
   production: true,
   firebaseConfig: {
-    apiKey: "AIzaSyAgQJTAqrjG5Oh0NfO6PzRMXmC-e6zMykI",
+    apiKey: "",
     authDomain: "aser-corredores.firebaseapp.com",
     databaseURL: "https://aser-corredores.firebaseio.com",
     projectId: "aser-corredores",
